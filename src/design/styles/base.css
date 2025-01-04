@@ -1,0 +1,274 @@
+:root {
+  /* 基础颜色 */
+  --primary-color: #1890ff; /* 蓝色 */
+  --success-color: #52c41a; /* 绿色 */
+  --warning-color: #faad14; /* 橙色 */
+  --error-color: #f5222d; /* 红色 */
+  --info-color: #1890ff; /* 蓝色 */
+  --processing-color: #1890ff; /* 蓝色 */
+  --highlight-color: #eb2f96; /* 粉红色 */
+  --normal-color: #d9d9d9; /* 灰色 */
+  --body-background: #ffffff; /* 白色 */
+  --component-background: #ffffff; /* 白色 */
+  --heading-color: #000000a6; /* 浅黑色 */
+  --text-color: #333333; /* 浅黑色 */
+  --text-color-secondary: #00000099; /* 更浅的黑色 */
+  --text-color-placeholder: #0000004d; /* 占位符颜色 */
+  --disabled-color: #0000004d; /* 禁用颜色 */
+  --border-color-base: #d9d9d9; /* 边框颜色 */
+  --border-color-split: #e8e8e8; /* 分割线颜色 */
+  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); /* 阴影 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  height: 100vh;
+  color: var(--text-color);
+  background: var(--body-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 重置样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 基本元素样式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 布局样式 */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.col {
+  flex: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* 实用类 */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 4px;
+}
+
+.m-2 {
+  margin: 8px;
+}
+
+.m-3 {
+  margin: 16px;
+}
+
+.m-4 {
+  margin: 24px;
+}
+
+.m-5 {
+  margin: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 4px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.p-3 {
+  padding: 16px;
+}
+
+.p-4 {
+  padding: 24px;
+}
+
+.p-5 {
+  padding: 48px;
+}
+
+/* 美化滚动条 */
+/* Firefox */
+::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: rgb(240, 240, 240); /* 轨道颜色 */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(211 212 215);
+  border-radius: 4px;
+}
+
+/* 滚动条滑块：hover状态 */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(189 191 193); /* 滑块hover颜色 */
+}
+/* 响应式布局 */
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .col-lg-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}

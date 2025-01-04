@@ -1,0 +1,15 @@
+@import './styles/base.css';
+@import './styles/tailwind.css';
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-weight: normal;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}

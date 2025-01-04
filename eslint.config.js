@@ -1,3 +1,7 @@
+/*
+ * @Description:
+ * @FilePath: \ark-admin-front\eslint.config.js
+ */
 import pluginVue from 'eslint-plugin-vue'
 import vueTsEslintConfig from '@vue/eslint-config-typescript'
 import pluginVitest from '@vitest/eslint-plugin'
@@ -16,8 +20,22 @@ export default [
   },
 
   ...pluginVue.configs['flat/essential'],
+  // 添加或修改规则配置
+
+  {
+    extends: ['plugin:vue/vue3-recommended'],
+    rules: {
+      'vue/multi-word-component-names': 'off', // 关闭该规则
+      'vue/no-parsing-error': [
+        'error',
+        {
+          'x-invalid-end-tag': false,
+        },
+      ],
+    },
+  },
   ...vueTsEslintConfig(),
-  
+
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],

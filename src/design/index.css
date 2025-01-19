@@ -1,6 +1,7 @@
 @import './styles/base.css';
 @import './styles/tailwind.css';
 
+@import './themes/light-theme.scss';
 #app {
   width: 100vw;
   height: 100vh;

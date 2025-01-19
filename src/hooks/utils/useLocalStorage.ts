@@ -1,3 +1,4 @@
+// src/hooks/utils/useLocalStorage.ts
 import { ref, watch, onMounted, type Ref } from 'vue'
 
 type StorageType = 'localStorage' | 'sessionStorage'
@@ -13,7 +14,10 @@ function useLocalStorage<T>(
   function getStoredValue(): T | null {
     try {
       const storedValue = storage.getItem(key)
-      return storedValue !== null ? (JSON.parse(storedValue) as T) : null
+      if (storedValue === null || storedValue === 'undefined') {
+        return null
+      }
+      return JSON.parse(storedValue) as T
     } catch (error) {
       console.error('Failed to parse stored value:', error)
       return null
@@ -30,6 +34,8 @@ function useLocalStorage<T>(
   onMounted(() => {
     if (parsedValue !== null) {
       storage.setItem(key, JSON.stringify(parsedValue))
+    } else {
+      storage.setItem(key, JSON.stringify(resolvedInitialValue))
     }
   })
 

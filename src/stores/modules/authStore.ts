@@ -36,7 +36,7 @@ export const useAuthStore = defineStore(
       // 存储用户信息
       await userStore.getUserInfo(params)
       // 跳转至首页
-      router.push('/home')
+      router.push('/')
     }
     return { register, login }
   },

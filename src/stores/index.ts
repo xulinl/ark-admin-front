@@ -6,3 +6,4 @@ export const setupStore = () => {
   return pinia
 }
 export { useAuthStore } from './modules/authStore'
+export { useUserStore } from './modules/userStore'

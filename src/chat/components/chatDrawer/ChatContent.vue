@@ -10,18 +10,27 @@
         </div>
       </div>
       <div class="sender-content" :class="{ 'sender-content-active': SenderInputFocus }">
+        <div class="sender-input">
+          <a-textarea
+            style="max-height: 200px; overflow-y: auto"
+            v-model:value="senderValue"
+            :bordered="false"
+            @focus="handleSenderInputFocus"
+            @blur="handleSenderInputBlur"
+            placeholder="请输入问题，我可以完成智能解答、文案撰写、生成代码等多种任务..."
+            auto-size
+          >
+          </a-textarea>
+        </div>
         <div class="online-search-tag" @click="handelToggleOnlineSearch">开启联网<i></i></div>
-        <a-textarea v-model:value="senderValue" :bordered="false" @focus="handleSenderInputFocus"
-          @blur="handleSenderInputBlur" placeholder="请输入问题，我可以完成智能解答、文案撰写、生成代码等多种任务..." auto-size>
-        </a-textarea>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-const senderValue = ref<any>('');
+import { ref } from 'vue'
+const senderValue = ref<any>('')
 
 /**
  * @description: 文字输入框聚焦
@@ -29,10 +38,11 @@ const senderValue = ref<any>('');
  */
 const SenderInputFocus = ref<boolean>(false)
 const handleSenderInputFocus = () => {
-  console.log('1234');
+  console.log('1234')
   SenderInputFocus.value = true
-};
+}
 const handleSenderInputBlur = () => {
+  if (senderValue.value.trim() !== '') return
   SenderInputFocus.value = false
 }
 /**
@@ -40,7 +50,7 @@ const handleSenderInputBlur = () => {
  * @return {*}
  */
 const handelToggleOnlineSearch = () => {
-  console.log('开启联网');
+  console.log('开启联网')
 }
 </script>
 <style scoped lang="scss">
@@ -74,7 +84,7 @@ const handelToggleOnlineSearch = () => {
 
   .sender-content {
     width: 80%;
-    height: 52px;
+    height: 90px;
     background-color: #fff;
     position: absolute;
     bottom: 24px;
@@ -82,25 +92,24 @@ const handelToggleOnlineSearch = () => {
     transform: translateX(-50%);
     border: 1px solid #91caff;
     border-radius: 8px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding: 12px 16px;
     display: flex;
-    align-items: center;
-
+    flex-direction: column;
+    justify-content: space-between;
     .online-search-tag {
-      width: 120px;
+      width: 100px;
+      height: 26px;
+      padding: 0 4px;
       background-color: #f5f7fa;
       border-radius: 4px;
       color: #0c0d0e;
       display: flex;
-      font-size: 12px;
-      height: 26px;
       justify-content: center;
       align-items: center;
-      padding: 0 6px;
-      margin-left: 8px;
+      font-size: 12px;
       border: 1px solid #eaedf1;
       cursor: pointer;
-
       i {
         background-color: #52c41a;
         border-radius: 50%;
@@ -120,10 +129,12 @@ const handelToggleOnlineSearch = () => {
   }
 
   .sender-content-active {
-    height: 100px;
+    min-height: 140px !important;
+    max-height: 500px;
     border: 1px solid #4096ff;
     box-shadow: 0 0 8px rgba(64, 150, 255, 0.3);
-    /* 添加阴影效果 */
+    .online-search-tag {
+    }
   }
 
   .empty-description {

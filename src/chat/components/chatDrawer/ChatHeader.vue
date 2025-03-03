@@ -8,12 +8,8 @@
     </div>
     <div class="model-card">
       <div class="model-card__left">
-        <img
-          class="model-logo"
-          tabindex="0"
-          draggable="false"
-          src="https://ark-auto-2100466578-cn-beijing-default.tos-cn-beijing.volces.com/model_cardDdnKffURUE.png"
-        />
+        <img class="model-logo" tabindex="0" draggable="false"
+          src="https://ark-auto-2100466578-cn-beijing-default.tos-cn-beijing.volces.com/model_cardDdnKffURUE.png" />
         <div class="model-name">DeepSeek-R1</div>
         <div class="divider-line"></div>
         <div>250120</div>
@@ -21,13 +17,13 @@
       </div>
       <div class="model-card__right">
         <div class="icon">
-          <a-tooltip title="更换模型" :color="'#52c41a'">
+          <a-tooltip title="更换模型">
             <SwapOutlined />
           </a-tooltip>
         </div>
         <div class="divider-line"></div>
         <div class="icon">
-          <a-tooltip title="参数设置" :color="'#52c41a'">
+          <a-tooltip title="参数设置">
             <DeploymentUnitOutlined />
           </a-tooltip>
         </div>
@@ -61,16 +57,19 @@ import {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+
   &__top {
     height: 30px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+
     :deep(.ant-btn) {
       display: flex;
       align-items: center;
     }
   }
+
   .model-card {
     width: 800px;
     height: 60px;
@@ -81,21 +80,25 @@ import {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     &__left {
       flex: 1;
       display: flex;
       align-items: center;
+
       .model-logo {
         width: 38px;
         height: 38px;
         border: 1px solid #eaeaea;
         border-radius: 4px;
       }
+
       .model-name {
         font-size: 17px;
         font-weight: 600;
         margin-left: 8px;
       }
+
       .deep-think-tag {
         align-items: center;
         align-self: center;
@@ -112,6 +115,7 @@ import {
         line-height: 20px;
         padding: 0 6px;
         margin-left: 8px;
+
         i {
           background-color: #52c41a;
           border-radius: 50%;
@@ -121,17 +125,20 @@ import {
         }
       }
     }
+
     &__right {
       display: flex;
       align-items: center;
       font-size: 16px;
     }
+
     .divider-line {
       margin: 0 8px;
       height: 16px;
       width: 1px;
       background-color: rgba(0, 0, 0, 0.15);
     }
+
     .icon {
       cursor: pointer;
       font-size: 18px;
@@ -141,6 +148,7 @@ import {
       align-items: center;
       justify-content: center;
     }
+
     .icon:hover {
       background-color: #f0f5ff;
       color: #4096ff;

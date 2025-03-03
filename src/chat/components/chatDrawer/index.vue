@@ -1,14 +1,6 @@
 <template>
-  <a-drawer
-    :open="visible"
-    class="custom-class"
-    root-class-name="root-class-name"
-    :headerStyle="{ display: 'none' }"
-    :bodyStyle="{ padding: 0 }"
-    placement="left"
-    @after-open-change="afterOpenChange"
-    width="1400px"
-  >
+  <a-drawer :open="visible" class="custom-class" root-class-name="root-class-name" :headerStyle="{ display: 'none' }"
+    :bodyStyle="{ padding: 0 }" placement="left" @after-open-change="afterOpenChange" width="1200px">
     <div class="chat-container">
       <div class="chat-container-left">
         <ChatAsider />
@@ -45,6 +37,7 @@ const showDrawer = () => {
 .chat-container {
   display: flex;
   height: 100%;
+
   .chat-container-right {
     flex: 1;
     flex-direction: column;

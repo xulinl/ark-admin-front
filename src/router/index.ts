@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Author: xulin
+ * @Date: 2025-03-03 11:23:48
+ * @LastEditors: xulin
+ * @LastEditTime: 2025-03-03 13:15:43
+ * @FilePath: \ark-admin-front\src\router\index.ts
+ */
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from '@/views/login/index.vue'
 import Layout from '@/layouts/index.vue'
@@ -70,22 +78,22 @@ const router = createRouter({
 })
 
 // 导航守卫
-router.beforeEach((to, from, next) => {
-  const isAuthenticated = useLocalStorage('token', null).value
-  console.log(to)
-  if (to.matched.some((record) => !record.meta.noRequiresAuth)) {
-    if (!isAuthenticated) {
-      next({ name: 'login' })
-    } else {
-      next()
-    }
-  } else {
-    if (isAuthenticated && to.name === 'login') {
-      next({ name: 'dashboard' })
-    } else {
-      next()
-    }
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = useLocalStorage('token', null).value
+//   console.log(to)
+//   if (to.matched.some((record) => !record.meta.noRequiresAuth)) {
+//     if (!isAuthenticated) {
+//       next({ name: 'login' })
+//     } else {
+//       next()
+//     }
+//   } else {
+//     if (isAuthenticated && to.name === 'login') {
+//       next({ name: 'dashboard' })
+//     } else {
+//       next()
+//     }
+//   }
+// })
 
 export default router
